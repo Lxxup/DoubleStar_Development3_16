@@ -29,7 +29,8 @@
 
         <activity android:name=".FirstPageActivity" />
         <activity android:name=".MyOrderActivity" />
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".Test2Activity"></activity>
     </application>
 
 </manifest>
