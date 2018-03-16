@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">双星云犬</string>
+    <string name="login_readeritem">登录即代表阅读并同意阅读条款</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="head">头像</string>
+    <string name="username">用户名</string>
+    <string name="telephone">手机号</string>
+    <string name="password">密码</string>
+    <string name="change">[修改]</string>
+    <string name="nickname">昵称</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="newuser_register">新用户注册</string>head
+    <string name="ds_company">双星集团</string>
+    <string name="myorder">我的订单</string>
+    <string name="version_update">版本更新</string>
+    <string name="feedback">意见反馈</string>
+    <string name="exit_login">退出登录</string>
+    <string name="advice">请输入您的意见</string>
+    <string name="submit_advice">提交意见</string>
+</resources>

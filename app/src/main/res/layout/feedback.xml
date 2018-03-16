@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tvfeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="@string/feedback"/>
+
+
+
+
+
+        <EditText
+            android:layout_marginTop="100dp"
+            android:id="@+id/etfeedback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/advice"
+             />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/submit_advice"
+            android:textColor="@drawable/login_button"
+            android:textSize="16dp" />
+        <!--android:textColor="#8b8282"-->
+
+       <!-- <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/forget_password"
+                android:textColor="#4bb7ed"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingRight="3dp"
+                android:text="@string/newuser_register"
+                android:textColor="#4bb7ed"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>-->
+
+
+    </LinearLayout>
+
+
+   <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="@string/login_readeritem"
+        android:textColor="#8b8282"
+        android:textSize="13sp" />-->
+
+
+</RelativeLayout>
