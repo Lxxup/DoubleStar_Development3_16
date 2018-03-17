@@ -12,7 +12,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
-
         new android.os.Handler().postDelayed(new Runnable() {
             public void run() {
                 Intent mainIntent = new Intent(SplashActivity.this,
@@ -22,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
             }
 
         }, SPLASH_DISPLAY_LENGHT);
+
 
 
     }

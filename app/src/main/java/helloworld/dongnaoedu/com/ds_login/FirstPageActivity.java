@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FirstPageActivity extends AppCompatActivity {
     /*---------------------------------胎压监测--------------------------------------*/
@@ -19,7 +21,8 @@ public class FirstPageActivity extends AppCompatActivity {
     /*---------------------------------胎压监测结束-----------------------------------*/
 
     /*---------------------------------我的双星---------------------------------------*/
-    ImageView iVmyorder,iVfeedback,iVversion;
+
+    ImageView iVmyorder, iVfeedback, iVversion;
 
 
     /*---------------------------------我的双星结束------------------------------------*/
@@ -28,7 +31,7 @@ public class FirstPageActivity extends AppCompatActivity {
 
     ListView lst1, lst2;
     Spinner sp1;
-    String[] datasources = {"救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7", "救援订单8", "救援订单9", "救援订单10", "救援订单11", "救援订单12", "救援订单13", "救援订单14", "救援订单15", "救援订单16","救援订单17", "救援订单18", "救援订单19", "救援订单20", "救援订单21", "救援订单22", "救援订单23","救援订单24", "救援订单25", "救援订单26", "救援订单27", "救援订单28", "救援订单29", "救援订单30","救援订单31", "救援订单32", "救援订单33", "救援订单34", "救援订单35", "救援订单36", "救援订单37","救援订单38", "救援订单39", "救援订单40", "救援订单41", "救援订单42", "救援订单43", "救援订单44","救援订单45", "救援订单46", "救援订单47", "救援订单48", "救援订单49", "救援订单50", "救援订单7","救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7","救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7"};
+    String[] datasources = {"救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7", "救援订单8", "救援订单9", "救援订单10", "救援订单11", "救援订单12", "救援订单13", "救援订单14", "救援订单15", "救援订单16", "救援订单17", "救援订单18", "救援订单19", "救援订单20", "救援订单21", "救援订单22", "救援订单23", "救援订单24", "救援订单25", "救援订单26", "救援订单27", "救援订单28", "救援订单29", "救援订单30", "救援订单31", "救援订单32", "救援订单33", "救援订单34", "救援订单35", "救援订单36", "救援订单37", "救援订单38", "救援订单39", "救援订单40", "救援订单41", "救援订单42", "救援订单43", "救援订单44", "救援订单45", "救援订单46", "救援订单47", "救援订单48", "救援订单49", "救援订单50", "救援订单7", "救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7", "救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7"};
     String[] datasources3 = {"双星产品推广1", "双星产品推广2", "双星产品推广3", "双星产品推广4", "双星产品推广5", "双星产品推广6", "双星产品推广7", "双星产品推广8", "双星产品推广9", "双星产品推广10", "双星产品推广11", "双星产品推广12", "双星产品推广13", "双星产品推广14", "双星产品推广15", "双星产品推广16"};
     String[] datasources2 = {"", "集团简介", "团队介绍", "招聘信息"};
 
@@ -110,6 +113,18 @@ public class FirstPageActivity extends AppCompatActivity {
         );
         lst2.setAdapter(adapter2);
 
+        lst2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent=new Intent(FirstPageActivity.this,MyOrderActivity.class);
+                startActivity(intent);
+                String ss=datasources3[i]+"没有上线";
+                Toast.makeText(FirstPageActivity.this, ss, Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
+
+
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -123,12 +138,12 @@ public class FirstPageActivity extends AppCompatActivity {
 
 
          /*--------------------------------我的双星------------------------------------*/
-        iVmyorder=(ImageView)findViewById(R.id.iVmyorder);
+        iVmyorder = (ImageView) findViewById(R.id.iVmyorder);
 
         iVmyorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(FirstPageActivity.this,MyOrderActivity.class);
+                Intent intent = new Intent(FirstPageActivity.this, MyOrderActivity.class);
                 startActivity(intent);
             }
         });
@@ -136,16 +151,16 @@ public class FirstPageActivity extends AppCompatActivity {
 
          /*-------------------------------我的双星结束----------------------------------*/
 
- /*--------------------------------意见反馈------------------------------------*/
-         iVfeedback=(ImageView)findViewById(R.id.iVfeedback);
-         iVfeedback.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent=new Intent(FirstPageActivity.this,FeedbackActivity.class);
-                 startActivity(intent);
-             }
-         });
-/*--------------------------------意见反馈结束------------------------------------*/
+         /*--------------------------------意见反馈------------------------------------*/
+        iVfeedback = (ImageView) findViewById(R.id.iVfeedback);
+        iVfeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstPageActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
+        /*--------------------------------意见反馈结束------------------------------------*/
 
         /*--------------------------------tabhost选项卡--------------------------------*/
 

@@ -2,9 +2,12 @@ package helloworld.dongnaoedu.com.ds_login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 public class MyOrderActivity extends AppCompatActivity {
 
@@ -12,10 +15,16 @@ public class MyOrderActivity extends AppCompatActivity {
     String[] datasource_order = {"我的已完成订单1", "我的已完成订单2", "我的已完成订单3", "我的已完成订单4", "我的已完成订单5", "我的已完成订单6", "我的已完成订单7", "我的已完成订单8", "我的已完成订单9", "我的订单10", "我的已完成订单11", "我的已完成订单12", "我的已完成订单1", "我的已完成订单2", "我的已完成订单3", "我的已完成订单4", "我的已完成订单5", "我的已完成订单6", "我的已完成订单7", "我的已完成订单8", "我的已完成订单9", "我的已完成订单10", "我的已完成订单11", "我的已完成订单12", "我的已完成订单1", "我的已完成订单2", "我的已完成订单3", "我的已完成订单4", "我的已完成订单5", "我的已完成订单6", "我的已完成订单7", "我的已完成订单8", "我的已完成订单9", "我的已完成订单10", "我的已完成订单11", "我的订单12", "我的已完成订单1", "我的已完成订单2", "我的已完成订单3", "我的已完成订单4", "我的已完成订单5", "我的已完成订单6", "我的已完成订单7", "我的已完成订单8", "我的已完成订单9", "我的已完成订单10", "我的已完成订单11", "我的已完成订单12"};
     String[] datasource_order1 = {"我的未完成订单1", "我的未完成订单2", "我的未完成订单3", "我的未完成订单4", "我的未完成订单5", "我的未完成订单6", "我的未完成订单7", "我的未完成订单8", "我的未完成订单9", "我的未完成订单10", "我的未完成订单11", "我的未完成订单12", "我的未完成订单1", "我的未完成订单2", "我的未完成订单3", "我的未完成订单4", "我的未完成订单5", "我的未完成订单6", "我的未完成订单7", "我的未完成订单8", "我的未完成订单9", "我的未完成订单10", "我的未完成订单11", "我的未完成订单12", "我的未完成订单1", "我的未完成订单2", "我的未完成订单3", "我的未完成订单4", "我的未完成订单5", "我的未完成订单6", "我的未完成订单7", "我的未完成订单8", "我的未完成订单9", "我的未完成订单10", "我的未完成订单11", "我的未完成订单12", "我的未完成订单1", "我的未完成订单2", "我的未完成订单3", "我的未完成订单4", "我的未完成订单5", "我的未完成订单6", "我的未完成订单7", "我的未完成订单8", "我的未完成订单9", "我的未完成订单10", "我的未完成订单11", "我的未完成订单12"};
 
+    String[] courses;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myorder);
+
+        courses=getResources().getStringArray(R.array.course);
+
+
 
         /*--------------------------------未完成订单--------------------------------*/
         lstWeiwancheng = (ListView) findViewById(R.id.lst_weiwancheng);
@@ -28,6 +37,17 @@ public class MyOrderActivity extends AppCompatActivity {
         );
 
         lstWeiwancheng.setAdapter(adapter_order);
+
+
+        lstWeiwancheng.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String wwcdd=datasource_order1[i]+"被吃掉了";
+                Toast.makeText(MyOrderActivity.this, wwcdd, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         /*--------------------------------未完成订单结束--------------------------------*/
 
 
@@ -42,6 +62,15 @@ public class MyOrderActivity extends AppCompatActivity {
         );
 
         lstYiwancheng.setAdapter(adapter_order_complete);
+
+        lstYiwancheng.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String ywcdd=datasource_order[i]+"订单在睡觉";
+                Toast.makeText(MyOrderActivity.this, ywcdd, Toast.LENGTH_LONG).show();
+            }
+        });
+
         /*--------------------------------已完成订单结束--------------------------------*/
 
 

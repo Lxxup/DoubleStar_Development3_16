@@ -18,6 +18,8 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.test_activity);
         btnTest = (Button) findViewById(R.id.btnTest);
 
+
+
         btnTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
