@@ -17,11 +17,21 @@
             android:layout_gravity="center_horizontal"
             android:src="@mipmap/login_logo" />
 
+        <TextView
+            android:id="@+id/tvmm"
+            android:layout_marginTop="40dp"
+            android:text="登录手机号：188010     密码：123456"
+            android:layout_width="match_parent"
+            android:textSize="18dp"
+            android:textColor="#ff0000"
+            android:layout_height="wrap_content" />
+
+
         <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="35dp"
             android:hint="@string/telephone"
             android:inputType="number" />
 

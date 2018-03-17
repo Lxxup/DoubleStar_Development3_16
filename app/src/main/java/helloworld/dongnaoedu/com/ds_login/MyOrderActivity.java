@@ -1,5 +1,6 @@
 package helloworld.dongnaoedu.com.ds_login;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,6 +45,8 @@ public class MyOrderActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String wwcdd=datasource_order1[i]+"被吃掉了";
                 Toast.makeText(MyOrderActivity.this, wwcdd, Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MyOrderActivity.this,OrderDetailActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -68,6 +71,8 @@ public class MyOrderActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String ywcdd=datasource_order[i]+"订单在睡觉";
                 Toast.makeText(MyOrderActivity.this, ywcdd, Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(MyOrderActivity.this,OrderDetailActivity.class);
+                startActivity(intent);
             }
         });
 

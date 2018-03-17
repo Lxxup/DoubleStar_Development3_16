@@ -27,8 +27,6 @@ public class FirstPageActivity extends AppCompatActivity {
 
     /*---------------------------------我的双星结束------------------------------------*/
 
-
-
     ListView lst1, lst2;
     Spinner sp1;
     String[] datasources = {"救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7", "救援订单8", "救援订单9", "救援订单10", "救援订单11", "救援订单12", "救援订单13", "救援订单14", "救援订单15", "救援订单16", "救援订单17", "救援订单18", "救援订单19", "救援订单20", "救援订单21", "救援订单22", "救援订单23", "救援订单24", "救援订单25", "救援订单26", "救援订单27", "救援订单28", "救援订单29", "救援订单30", "救援订单31", "救援订单32", "救援订单33", "救援订单34", "救援订单35", "救援订单36", "救援订单37", "救援订单38", "救援订单39", "救援订单40", "救援订单41", "救援订单42", "救援订单43", "救援订单44", "救援订单45", "救援订单46", "救援订单47", "救援订单48", "救援订单49", "救援订单50", "救援订单7", "救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7", "救援订单1", "救援订单2", "救援订单3", "救援订单4", "救援订单5", "救援订单6", "救援订单7"};
@@ -102,6 +100,20 @@ public class FirstPageActivity extends AppCompatActivity {
         );
         lst1.setAdapter(adapter);
 
+        lst1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String BHAZ=datasources[i]+"永远做不好了";
+                Toast.makeText(FirstPageActivity.this, BHAZ, Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(FirstPageActivity.this,OrderDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(
                 this,
@@ -116,7 +128,7 @@ public class FirstPageActivity extends AppCompatActivity {
         lst2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent(FirstPageActivity.this,MyOrderActivity.class);
+                Intent intent=new Intent(FirstPageActivity.this,OrderDetailActivity.class);
                 startActivity(intent);
                 String ss=datasources3[i]+"没有上线";
                 Toast.makeText(FirstPageActivity.this, ss, Toast.LENGTH_LONG).show();

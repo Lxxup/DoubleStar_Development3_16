@@ -8,6 +8,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                         (etPhone.getText().toString().equals("519519") == true && etPassword.getText().toString().equals("123456") == true)){
                     Intent intent = new Intent(MainActivity.this, FirstPageActivity.class);
                     startActivity(intent);
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "账号或密码错误", Toast.LENGTH_LONG).show();
                 }
             }
         });
